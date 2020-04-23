@@ -1,0 +1,91 @@
+body {
+  text-align:center; 
+  font-family:sans-serif;
+  text-transform: uppercase;
+}
+::selection {
+  color: white;
+  background: black;
+}
+/* link css */
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  input,textarea{
+    border: none;
+    font-size: medium;
+    width: 100%;
+    text-transform: uppercase;
+    outline: none;
+  }
+  input[type=submit]:hover {
+   text-decoration: underline;
+  }
+  textarea {
+    width: 400px;
+    height: 100px;
+    padding: 0px;
+    resize: none;
+  }
+  div {
+    width: 410px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: left ;
+  }
+  table{
+    table-layout: fixed ;
+    width: 600px;
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: left ;
+    border-collapse: collapse;
+    font-size: medium;
+  }
+  tr:hover {
+    background-color: black;
+    color: white;
+  }
+  td,th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid black; 
+    width: 33% ;
+    }
+
+/* Arrow Buttons For text Input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+button {
+  font-size: medium;
+  border: none; 
+  width: 100%;
+  outline: none;
+  text-align: left;
+  }
+
+  .radioContainer input:checked{
+    color: black;
+  }
