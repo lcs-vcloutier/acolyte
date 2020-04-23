@@ -22,15 +22,15 @@
   ?>
 
     <div id="form-div">
-              <label for="title">TITLE:</label> <br><br>
-              <p><?php echo $row["title"] ?> </p>
-              <label for="email">EMAIL:</label><br><br>
-              <p><?php echo $row["email"] ?></p>           
-              <label for="location">LOCATION:</label><br><br>
-              <p><?php echo $row["locationOfJob"] ?></p>
-              <label for="payment">PAYMENT(USD):</label><br><br>
-              <p><?php echo $row["payment"] ?></p>
-              <label for="description">DESCRIPTION:</label><br><br>
+              <label for="title">TITLE:</label>
+              <?php echo $row["title"] ?> <br><br>
+              <label for="email">EMAIL:</label>
+              <?php echo $row["email"] ?> <br><br>    
+              <label for="location">LOCATION:</label>
+              <?php echo $row["locationOfJob"] ?> <br><br>
+              <label for="payment">PAYMENT(USD):</label>
+              <?php echo $row["payment"] ?> <br><br>
+              <label for="description">DESCRIPTION:</label>
               <p><?php echo $row["descriptionOfJob"] ?></p>
     </div>
     <?php
