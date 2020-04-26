@@ -18,7 +18,6 @@
     <th> <input type="text" id="titlefilter" onkeyup="tableFilterFunction('titlefilter',num=0)" placeholder="TITLE"></th>
     <th><input type="text" id="locationfilter" onkeyup="tableFilterFunction('locationfilter',num=1)" placeholder="LOCATION"></th>
     <th><button onclick="sortTable('jobTable',2)">PAYMENT(USD)</button></th>
-    <td>id</td>
   </tr>
 <?php
 $sql = "SELECT id, title, locationOfJob, payment FROM posted_jobs";
@@ -26,15 +25,28 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 // output data of each row
 while($row = $result->fetch_assoc()) {
-echo "<tr><td>" . $row["title"]. "</td><td>" . $row["locationOfJob"] . "</td><td>"
-. $row["payment"]. "</td> <td> <form id=selectedJobRadioForm action=\"selectedJobPage.php\" method = \"POST\"> <input type=\"radio\" class=\"radioContainer\" name=\"jobRadio\"  value=\"" . $row["id"]. "\"/> <form> </td> </tr>";
+echo "<tr data-href='selectedJobPage.php'><td>" . $row["title"]. "</td><td>" . $row["locationOfJob"] . "</td><td>"
+. $row["payment"]. "</td> </tr>";
 }
-echo "</table>";
 } else { echo "0 results"; }
 $conn->close();
 ?>
-
-<input type=submit placeholder="MORE">
 </table>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const rows = document.querySelectorAll("tr[data-href]");
+
+  rows.forEach(row => { 
+    row.addEventListener("click",() => {
+      window.location.href = row.dataset.href
+
+    });
+
+  });
+  
+});
+</script>
+ 
 </body>
 </html>

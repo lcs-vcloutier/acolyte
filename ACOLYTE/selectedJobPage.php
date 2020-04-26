@@ -13,7 +13,7 @@
 <h1><a href="index.html">ACOLYTE</a></h1>
         <p>SELECTED JOB</p>
   <?php
-  $selectedJobId = mysqli_real_escape_string($conn, $_POST['jobRadio']);
+  $selectedJobId = mysqli_real_escape_string($conn, $_POST['jobsubmit']);
   $sql = "SELECT * FROM posted_jobs WHERE `id` = $selectedJobId";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
@@ -35,7 +35,7 @@
     </div>
     <?php
     }
-    } else { echo "0 results"; }
+    } else { echo "TRY AGAIN"; }
     $conn->close();
 ?>
        

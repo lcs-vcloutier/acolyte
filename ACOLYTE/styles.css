@@ -89,3 +89,7 @@ button {
   .radioContainer input:checked{
     color: black;
   }
+
+  tr[data-href] {
+    cursor: pointer;
+  }
