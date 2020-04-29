@@ -32,7 +32,9 @@ echo "<tr v-on:click='counter += 1'><td>" . $row["title"] . "</td><td>" . $row["
 } else { echo "0 results"; }
 $conn->close();
 ?>
-</table>
+</table> 
+
+
 
 <script>
 var example1 = new Vue({
