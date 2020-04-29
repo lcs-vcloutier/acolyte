@@ -36,6 +36,8 @@ $conn->close();
 
 
 
+
+
 <script>
 var example1 = new Vue({
   el: '#jobTable',
