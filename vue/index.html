@@ -1,0 +1,84 @@
+<script src="https://vuejs.org/js/vue.js"></script>
+
+<div id="app">
+
+	<selection-table v-ref:table :items="items"></selection-table>
+	
+	<div>
+		<pre>Selected: {{ $refs.table.selected | json }}</pre>
+		<pre>Data: {{ $refs.table.$data | json }}</pre>
+	</div>
+	
+</div>
+
+<template id="selection-table-template">
+	<table class="table">
+      <thead>
+        <tr>
+          <th><input type="checkbox" v-model="toggleState" /></th>
+          <th v-for="(key, value) in items[0]">{{ key }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in items" :class="{selected:selectedStates[$index]}">
+          <td><input @click="toggle($index)" v-model="selectedStates[$index]" type="checkbox"></td>
+          <td v-for="(key, value) in item">{{ value }}</td>
+        </tr>
+      </tbody>
+    </table>
+</template>
+<script>Vue.component('selection-table', 
+  {
+    template:'#selection-table-template',
+    
+    props: [ 'items' ],
+    
+    data:function()
+    {
+      return { 
+        toggleState:false,
+        selectedStates:[]
+      };
+    },
+  
+    computed:
+    {
+      selected:function()
+      {
+        return this.items.filter( function(item, index){ return !! this.selectedStates[index]; }.bind(this) );
+      }
+    },
+  
+    watch:
+    {
+      toggleState:function(state)
+      {
+        this.items.forEach( function(item, index){ this.selectedStates.$set(index, state); }.bind(this) );		
+      }
+    }
+  });
+  
+  var contacts = 
+  [
+    { id:1, name:"John Doe" },
+    { id:2, name:"Jane Doe" },
+    { id:3, name:"Joe Doe" }
+  ];
+  
+  var animals =
+  [
+    {name:'Cat',size:'medium',color:'brown',location:'basket'},
+    {name:'Dog',size:'large',color:'spotted',location:'kennel'},
+    {name:'Rabbit',size:'medium',color:'grey',location:'hutch'},
+    {name:'Fish',size:'small',color:'gold',location:'bowl'},
+    {name:'Horse',size:'large',color:'fawn',location:'field'}
+  ];
+    
+  
+  new Vue({
+    el: '#app',
+    data:{
+      items:animals
+    }
+  })
+  </script>

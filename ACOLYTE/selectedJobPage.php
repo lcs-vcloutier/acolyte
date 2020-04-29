@@ -13,7 +13,7 @@
 <h1><a href="index.html">ACOLYTE</a></h1>
         <p>SELECTED JOB</p>
   <?php
-  $selectedJobId = mysqli_real_escape_string($conn, $_POST['jobsubmit']);
+  $selectedJobId = $_COOKIE["selectedJobCookie"];
   $sql = "SELECT * FROM posted_jobs WHERE `id` = $selectedJobId";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
@@ -38,7 +38,5 @@
     } else { echo "TRY AGAIN"; }
     $conn->close();
 ?>
-       
-
 </body>
 </html>

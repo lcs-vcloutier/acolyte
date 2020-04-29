@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -25,7 +26,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 // output data of each row
 while($row = $result->fetch_assoc()) {
-echo "<tr data-href='selectedJobPage.php'><td>" . $row["title"]. "</td><td>" . $row["locationOfJob"] . "</td><td>"
+echo "<tr v-on:click='counter += 1'><td>" . $row["title"] . "</td><td>" . $row["locationOfJob"] . "</td><td>"
 . $row["payment"]. "</td> </tr>";
 }
 } else { echo "0 results"; }
@@ -34,18 +35,12 @@ $conn->close();
 </table>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const rows = document.querySelectorAll("tr[data-href]");
-
-  rows.forEach(row => { 
-    row.addEventListener("click",() => {
-      window.location.href = row.dataset.href
-
-    });
-
-  });
-  
-});
+var example1 = new Vue({
+  el: '#jobTable',
+  data: {
+    counter: 0
+  }
+})
 </script>
  
 </body>

@@ -1,3 +1,4 @@
+
 //filter table function
 function tableFilterFunction(inputId,num) {
   // Declare variables
@@ -67,11 +68,3 @@ function sortTable(tableClass, n) {
 //submit function is nessceray
 
 //selectedJobFunction	
-document.addEventListener("DOMContentLoaded", () => {
-  const rows = document.querySelectorAll("tr[data-href]");
-
-  rows.forEach(row => { 
-
-  });
-  
-});

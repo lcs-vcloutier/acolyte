@@ -83,11 +83,7 @@ button {
   border: none; 
   width: 100%;
   outline: none;
-  text-align: left;
-  }
-
-  .radioContainer input:checked{
-    color: black;
+  text-align: center;
   }
 
   tr[data-href] {
