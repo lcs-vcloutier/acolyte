@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">    
+    <script src="app.js"></script>
+</head>
+<body>
+        <h1><a href="index.html">ACOLYTE</a></h1>
+        <p>POST A JOB</p>
+        <div id="form-div">
+        <form action="backend/postAJobHandler.php" method = "POST" >
+              <label for="title">TITLE:</label>
+              <input type="text" id="title" name="title" autocomplete="off" required><br><br>
+              <label for="email">EMAIL:</label>
+              <input type="email" id="email" name="email" autocomplete="off" required><br><br>
+              <label for="location">LOCATION:</label>
+              <input type="text" id="location" name="location" autocomplete="off" required><br><br>
+              <label for="payment">PAYMENT(USD):</label>
+              <input type="number" id="payment" name="payment" autocomplete="off" min="1" required><br><br>
+              <label for="description">DESCRIPTION:</label><br>
+              <textarea type="text" id="description" name="description" autocomplete="off"required></textarea><br><br>              
+            <input type="submit" name="submit" placeholder="SUBMIT">
+        </form>
+    </div>
+</body>
+</html>
