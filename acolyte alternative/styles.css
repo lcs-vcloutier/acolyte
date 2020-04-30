@@ -92,4 +92,11 @@ input.selectedJobIdSubmit {
   text-align: left;
   }
 
-
+  button {
+    font-size: medium;
+    border: none; 
+    width: 100%;
+    outline: none;
+    text-align: left;
+    }
+  
