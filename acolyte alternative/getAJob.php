@@ -15,9 +15,9 @@
         <p>GET A JOB</p> 
 <table class= "jobTable" id="jobTable">
   <tr class="header">
-    <td width= "20%" class="idColumn">id</td>
-    <th width= "40%"class="title"> <input type="text" id="titlefilter" onkeyup="tableFilterFunction('titlefilter',num=1)" placeholder="TITLE"></th>
-    <th width= "40%"class="payment"><button onclick="sortTable('jobTable',2)">PAYMENT(USD)</button></th>
+    <td class="idColumn">id</td>
+    <th class="title"> <input type="text" id="titlefilter" onkeyup="tableFilterFunction('titlefilter',num=1)" placeholder="TITLE"></th>
+    <th class="payment"><button onclick="sortTable('jobTable',2)">PAYMENT(USD)</button></th>
   </tr>
 <?php
 $sql = "SELECT id, title, payment FROM posted_jobs";

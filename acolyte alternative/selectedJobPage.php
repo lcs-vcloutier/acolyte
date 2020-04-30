@@ -26,8 +26,6 @@
               <?php echo $row["title"] ?> <br><br>
               <label for="email">EMAIL:</label>
               <?php echo $row["email"] ?> <br><br>    
-              <label for="location">LOCATION:</label>
-              <?php echo $row["locationOfJob"] ?> <br><br>
               <label for="payment">PAYMENT(USD):</label>
               <?php echo $row["payment"] ?> <br><br>
               <label for="description">DESCRIPTION:</label>
