@@ -18,7 +18,7 @@
   <tr class="header">
     <td class="idColumn">id</td>
     <th class="title"> <input type="text" id="titlefilter" onkeyup="tableFilterFunction('titlefilter',num=1)" placeholder="TITLE"></th>
-    <th class="payment"><button onclick="sortTable('jobTable',2)">PAYMENT(USD)</button></th>
+    <th class="payment"><input type="text" id="paymentfilter" onkeyup="tableFilterFunction('paymentfilter',num=2)" placeholder="PAYMENT"></th>
   </tr>
 <?php
 $sql = "SELECT id, title, payment FROM posted_jobs";
