@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script data-ad-client="ca-pub-2861797726776494" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,7 @@
     <th class="payment"><input type="text" id="paymentfilter" onkeyup="tableFilterFunction('paymentfilter',num=2)" placeholder="PAYMENT"></th>
   </tr>
 <?php
-$sql = "SELECT id, title, payment FROM posted_jobs";
+$sql = "SELECT id, title, payment FROM posted_jobs WHERE dateOfPost BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW()";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 // output data of each row
