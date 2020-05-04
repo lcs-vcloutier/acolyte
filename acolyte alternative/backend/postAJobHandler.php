@@ -13,7 +13,7 @@ $description = mysqli_real_escape_string($conn, $_POST['description']);
 
 // Attempt insert query execution
 $sql = "INSERT INTO `posted_jobs` (`title`, `email`, `payment`, `descriptionOfJob`) 
-VALUES ('$title', '$email', '6', '$description')";
+VALUES ('$title', '$email', '$payment', '$description')";
 if(mysqli_query($conn, $sql)){
     echo "Job added successfully.";
 } else{
