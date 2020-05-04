@@ -1,11 +1,9 @@
 
 <?php
+// connect to database
 include_once 'dbh.php';
 
-
-//make form submit to itself?
-
-
+// make the variables
 $title = mysqli_real_escape_string($conn, $_POST['title']);
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $payment = mysqli_real_escape_string($conn, $_POST['payment']);

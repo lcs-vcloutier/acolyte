@@ -3,11 +3,12 @@ body {
   font-family:sans-serif;
   text-transform: uppercase;
 }
+/* highlight styling */
 ::selection {
   color: white;
   background: black;
 }
-/* link css */
+/* href styling */
 a:link {
     color: black;
     background-color: transparent;
@@ -23,6 +24,7 @@ a:link {
     background-color: transparent;
     text-decoration: underline;
   }
+/* form styling */
   input,textarea{
     border: none;
     font-size: medium;
@@ -46,6 +48,7 @@ a:link {
     margin: 0 auto;
     text-align: left ;
   }
+/* table styling */ 
   table{
     table-layout: fixed ;
     width: 600px;
@@ -82,19 +85,3 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-input.selectedJobIdSubmit {
-  font-size: medium;
-  border: none; 
-  width: 100%;
-  outline: none;
-  text-align: left;
-  }
-
-  button {
-    font-size: medium;
-    border: none; 
-    width: 100%;
-    outline: none;
-    text-align: left;
-    background-color: white;
-    }
